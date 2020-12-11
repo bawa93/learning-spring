@@ -6,4 +6,5 @@ import com.lakhveerbawa.learningspring.data.entity.Reservation;
 
 public interface ReservationRepository extends CrudRepository<Reservation, Long> {
 
+	public String name();
 }
