@@ -7,7 +7,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.lakhveerbawa.learningspring.data.entity.Guest;
 import com.lakhveerbawa.learningspring.data.entity.Room;
+import com.lakhveerbawa.learningspring.data.repository.GuestRepository;
 import com.lakhveerbawa.learningspring.data.repository.RoomRepository;
 
 @SpringBootApplication
@@ -26,6 +28,18 @@ public class LearningSpringApplication {
 		@GetMapping
 		public Iterable<Room> getRooms() {
 			return this.roomRepository.findAll();
+		}
+	}
+	
+	@RestController
+	@RequestMapping("/guests")
+	public class GuestController {
+		@Autowired
+		private GuestRepository guestRepository;
+		
+		@GetMapping
+		public  Iterable<Guest> getGuests() {
+			return this.guestRepository.findAll();
 		}
 	}
 
