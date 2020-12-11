@@ -1,5 +1,7 @@
 package com.lakhveerbawa.learningspring.data.entity;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -23,7 +25,15 @@ public class Reservation {
 	private long guestId;
 	
 	@Column(name = "RES_DATE")
-	private String res_date;
+	private Date reservationDate;
+
+	public Date getReservationDate() {
+		return reservationDate;
+	}
+
+	public void setReservationDate(Date reservationDate) {
+		this.reservationDate = reservationDate;
+	}
 
 	public long getReservationId() {
 		return reservationId;
@@ -49,13 +59,7 @@ public class Reservation {
 		this.guestId = guestId;
 	}
 
-	public String getRes_date() {
-		return res_date;
-	}
 
-	public void setRes_date(String res_date) {
-		this.res_date = res_date;
-	}
 	
 	
 }
